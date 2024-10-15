@@ -1,0 +1,57 @@
+{
+  "name": "scylla-validator",
+  "author": "majovkovic <majovkovic@gmail.com>",
+  "description": "Dead simple TypeScript schema-based validator",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/scylla-validator.cjs.js",
+  "module": "dist/scylla-validator.es.js",
+  "types": "dist/types/index.d.ts",
+  "keywords": [
+    "validation",
+    "validator",
+    "typescript",
+    "forms",
+    "schema"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/scylla-validator.es.js",
+      "require": "./dist/scylla-validator.cjs.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --project tsconfig.build.json",
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
+    "eslint": "^9.11.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^15.9.0",
+    "husky": "^9.1.6",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vitest": "^2.1.1"
+  }
+}
