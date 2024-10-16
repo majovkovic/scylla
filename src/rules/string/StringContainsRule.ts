@@ -2,7 +2,7 @@ import { Rule } from '~/rules';
 import { VALIDATION_ERROR_STRING_MESSAGES } from '~/constants/validationErrors';
 import { ValidationResult } from '~/types';
 
-export class ContainsRule extends Rule<string> {
+export class StringContainsRule extends Rule<string> {
   private readonly substring: string;
 
   constructor(substring: string, message?: string) {

@@ -14,12 +14,12 @@ import {
   IsCUIDRule,
   IsCUID2Rule,
   IsULIDRule,
-  ContainsRule,
+  StringContainsRule,
   StartsWithRule,
   EndsWithRule,
   IsHexColorRule,
   MatchesRegexRule,
-  IsDateRule,
+  StringIsDateRule,
   IsIPRule,
   IsJSONRule,
   ExactLengthRule,
@@ -52,7 +52,7 @@ export class StringFieldBuilder extends SharedFieldBuilder<string> {
    * Adds a rule that the string must contain the specified substring.
    */
   contains(substring: string, message?: string) {
-    this.addRule(new ContainsRule(substring, message));
+    this.addRule(new StringContainsRule(substring, message));
     return this;
   }
 
@@ -156,7 +156,7 @@ export class StringFieldBuilder extends SharedFieldBuilder<string> {
    * Adds a rule that the string must represent a valid date.
    */
   date(message?: string) {
-    this.addRule(new IsDateRule(message));
+    this.addRule(new StringIsDateRule(message));
     return this;
   }
 

@@ -1,14 +1,18 @@
 {
   "name": "scylla-validator",
   "author": "majovkovic <majovkovic@gmail.com>",
-  "description": "Dead simple TypeScript schema-based validator",
+  "description": "Simple TypeScript schema-based validator",
   "license": "MIT",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/majovkovic/scylla.git"
+  },
   "private": false,
   "type": "module",
   "main": "dist/scylla-validator.cjs.js",
   "module": "dist/scylla-validator.es.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "keywords": [
     "validation",
     "validator",
@@ -20,7 +24,7 @@
     ".": {
       "import": "./dist/scylla-validator.es.js",
       "require": "./dist/scylla-validator.cjs.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
@@ -28,7 +32,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc --project tsconfig.build.json",
+    "build": "vite build && tsc --project tsconfig.build.json && npm run build:types && rm -rf dist/temp",
+    "build:types": "rollup -c rollup.config.mjs",
     "lint": "eslint .",
     "lintfix": "eslint . --fix",
     "format": "prettier --write .",
@@ -42,6 +47,7 @@
     "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
+    "rollup-plugin-dts": "^6.1.1",
     "eslint": "^9.11.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
