@@ -46,7 +46,8 @@ const data = {
 
 const errors = scylla.validate(schema, data);
 
-console.log(validationResult);
+console.log(errors);
+// {}
 ```
 ### Custom Validation Messages
 

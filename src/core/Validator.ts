@@ -11,8 +11,9 @@ import {
   FileFieldBuilder,
 } from '~/fields';
 import { pick, omit, partial, extend, merge } from '~/core';
+import { Scylla } from '~/types';
 
-export const scylla = {
+export const scylla: Scylla = {
   /**
    * Creates a new ArrayFieldBuilder for defining array-based validation rules.
    * @param options - An object containing optional `message` and `name` for the array field.
